@@ -1,5 +1,5 @@
 !!!
-%html{ 'ng-app' => 'app' }
+%html{ 'ng-app' => 'app', manifest: "/application.manifest" }
   %head
     %title GRP
     = stylesheet_link_tag    'application', media: 'all'
@@ -10,7 +10,6 @@
       %ul
         %li{"ng-repeat" => 'item in items'}
           %a{href:'#items/{{item.id}}'} {{item.name}}
-
 
     %script{type:"text/ng-template", id:"views/item.html"}
       %h1 Item {{item.name}} view !

@@ -18,6 +18,7 @@ gem 'carrierwave', '~> 0.9.0'
 gem 'carrierwave_backgrounder', '~> 0.3.0'
 gem 'rmagick', '~> 2.13.2'
 gem 'fog', '~> 1.15.0'
+gem 'rack-offline'
 
 gem 'rabl', '~> 0.8.6'
 gem 'haml-rails', '~> 0.4'

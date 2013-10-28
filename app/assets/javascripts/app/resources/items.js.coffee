@@ -13,7 +13,7 @@ app.factory "Item", ['$resource', 'apiPrefix', '$q', ($resource, apiPrefix, $q) 
         deferred.resolve response
       ,(error) ->
         error.message = 'unable to retrieve items list'
-        deferred.reject error
+        deferred.resolve []
 
     deferred.promise
 
@@ -25,7 +25,7 @@ app.factory "Item", ['$resource', 'apiPrefix', '$q', ($resource, apiPrefix, $q) 
         deferred.resolve response
       ,(error) ->
         error.message = 'unable to retrieve item'
-        deferred.reject error
+        deferred.resolve []
 
     deferred.promise
 

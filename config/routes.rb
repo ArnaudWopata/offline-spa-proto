@@ -9,5 +9,16 @@ GrpServer::Application.routes.draw do
   # Passthrough to frontend
   match '/' => 'home#index'
 
+
+  offline = Rack::Offline.configure :cache_interval => 1 do
+    cache ActionController::Base.helpers.asset_path("application.css")
+    cache ActionController::Base.helpers.asset_path("application.js")
+
+    # cache other assets
+    network "/"
+  end
+
+  match "/application.manifest" => offline
+
   root to: 'home#index'
 end
