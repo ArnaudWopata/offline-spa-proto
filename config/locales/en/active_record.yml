@@ -1,0 +1,29 @@
+en:
+  activerecord:
+    models:
+      user: User
+    attributes:
+      user:
+        first_name: First name
+        surname: Surname
+        email: Email
+        password: Password
+        remember_me: Remember me
+    errors:
+      messages:
+        record_invalid: is invalid
+      models:
+        user:
+          blank: can't be blank
+          taken: is already taken
+          invalid: is invalid
+          confirmation: password and confirmation are not equal
+          attributes:
+              password:
+                too_short: password minimum length is 8
+        snapshot:
+          attributes:
+            project:
+              blank: can't be blank
+            content:
+              blank: can't be blank

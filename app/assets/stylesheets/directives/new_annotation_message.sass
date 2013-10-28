@@ -1,0 +1,31 @@
+.new-annotation-message
+  textarea
+    height: auto
+    font-size: 12px
+    width: 100%
+    border: none
+    resize: none
+    -ms-overflow-style: none
+    background: rgba(255, 255, 255, 0)
+
+    &:focus
+      outline: none
+
+  .controls
+    padding-bottom: 10px
+    a
+      cursor: pointer
+
+      &.publish
+        color: #999999
+        +transition(color, 500ms)
+
+        &.enabled
+          color: #216dd0
+
+      &.cancel,
+        color: #999999
+
+        &:before
+          content: '-'
+          margin-right: 3px

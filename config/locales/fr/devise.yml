@@ -1,0 +1,49 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+fr:
+  devise:
+    titles:
+      sign_up: S'enregistrer
+      sign_in: Connexion
+      forgot_password: Mot de passe oublié ?
+      change_password: Changer votre mot de passe
+      one_more_step: "Dernière étape :"
+      resend_confirmation: Ré-envoyer l'email de confirmation
+    sign_up: S'enregistrer
+    sign_in: Se connecter
+    confirmations:
+      resend_confirmation: Envoyer l'email de confirmation
+    failure:
+      invalid: 'Mot de passe ou email invalide'
+      not_found_in_database: 'Mot de passe ou email invalide'
+      user:
+        unconfirmed: l'adresse email n'a pas été confirmée
+      unauthenticated: Vous n'êtes pas authentifié
+    mailer:
+      confirmation_instructions:
+      reset_password_instructions:
+      unlock_instructions:
+    omniauth_callbacks:
+    passwords:
+      send_instructions: Nous allons envoyer les instructions pour réinitialiser votre mot de passe à l'adresse email associée à votre compte.
+      forgot: Oublié ?
+      reset_password: Réinitialiser mot de passe
+      change_password: Changer le mot de passe
+      new_password: Nouveau mot de passe
+      confirm_new_password: Confirmation
+      invalid_reset_token: Vous avez déjà réinitialiser votre mot de passe.
+      reset: Nous allons envoyer les instructions pour réinitialiser votre mot de passe à l'adresse email associée à votre compte.
+    registrations:
+      with_google: Ou avec un compte Google
+      have_account: Vous avez déjà un compte ?
+      disclaimer: "En vous inscrivant, vous acceptez les règles de communauté, les termes d'utilisation et la politique de confidentialité."
+      welcome: "Vous êtes maintenant inscrit. Vous allez recevoir les instructions pour valider votre compte à l'adresse %{email}."
+    sessions:
+      need_account: Besoin d'un compte ?
+      with_email: Ou bien avec votre email
+      with_google: Connectez-vous avec Google
+    unlocks:
+  errors:
+    messages:
+      not_saved:
+

@@ -1,0 +1,19 @@
+!!!
+%html{ 'ng-app' => 'app' }
+  %head
+    %title GRP
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    %script{type:"text/ng-template", id:"views/root.html"}
+      %h1 Items !
+      %ul
+        %li{"ng-repeat" => 'item in items'}
+          %a{href:'#items/{{item.id}}'} {{item.name}}
+
+
+    %script{type:"text/ng-template", id:"views/item.html"}
+      %h1 Item {{item.name}} view !
+
+    #content{ 'ng-view' => '' }
+      Loading...

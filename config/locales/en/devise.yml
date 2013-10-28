@@ -1,0 +1,75 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    titles:
+      sign_up: Sign up
+      sign_in: Sign in
+      forgot_password: Forgot your password ?
+      change_password: Change your password
+    sign_up: Sign up
+    sign_in: Sign in
+    confirmations:
+      confirmed: ''
+      send_instructions: ''
+      send_paranoid_instructions: ''
+    failure:
+      already_authenticated: ''
+      inactive: ''
+      invalid: ''
+      invalid_token: ''
+      locked: ''
+      not_found_in_database: ''
+      timeout: ''
+      unauthenticated: ''
+      unconfirmed: ''
+    mailer:
+      confirmation_instructions:
+        subject: ''
+      reset_password_instructions:
+        subject: ''
+      unlock_instructions:
+        subject: ''
+    omniauth_callbacks:
+      failure: ''
+      success: ''
+    passwords:
+      no_token: ''
+      send_instructions: Nous allons envoyer les instructions pour réinitialiser votre mot de passe à l'adresse email associée à votre compte.
+      send_paranoid_instructions: ''
+      updated: ''
+      updated_not_active: ''
+      forgot: Forgot ?
+      reset_password: Reset password
+      change_password: Change password
+      new_password: New password
+      confirm_new_password: Confirm new password
+    registrations:
+      destroyed: ''
+      signed_up: ''
+      signed_up_but_inactive: ''
+      signed_up_but_locked: ''
+      signed_up_but_unconfirmed: ''
+      update_needs_confirmation: ''
+      updated: ''
+      with_google: Or with a Google account
+      have_account: Already have an account ?
+      disclaimer: By signing up, you agree to the Community Guidelines. Terms of Use, and Privacy Policy
+    sessions:
+      need_account: Need an account ?
+      with_email: Or with your email
+      with_google: Sign in with Google
+    unlocks:
+      send_instructions: ''
+      send_paranoid_instructions: ''
+      unlocked: ''
+  errors:
+    messages:
+      already_confirmed: ''
+      confirmation_period_expired: ''
+      expired: ''
+      not_found: ''
+      not_locked: ''
+      not_saved:
+        one: ''
+        other: ''

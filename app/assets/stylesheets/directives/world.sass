@@ -1,0 +1,175 @@
+$sections: g r p
+#world
+  position: absolute
+  overflow: hidden
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: url('/assets/world/bg.svg') no-repeat center center #eaf1f3
+  .link-hack
+    position: absolute
+    opacity: 0
+    a.preview
+      position: relative
+      cursor: pointer
+      .popup
+        display: block
+        position: absolute
+        top: -100%
+  .base
+    position: absolute
+    top: 50%
+    left: 50%
+    width: 819px
+    height: 508px
+    @include transform( translateX(-50%) translateY(-50%) )
+    background: url('/assets/world/base.svg') no-repeat center center
+    z-index: 2
+
+    .label
+      position: absolute
+      width: 200px
+      font-weight: bold
+      line-height: 34px
+      color: #8EA4A6
+
+      &:before
+        content: ''
+        position: absolute
+        width: 200px
+        height: 200px
+        border-style: solid
+        border-color: #C9D4D6
+        z-index: 1
+
+      .icon
+        display: inline-block
+        width: 32px
+        height: 32px
+        text-align: center
+        color: #FFF
+        border-radius: 16px
+      &.labelG
+        top: -20px
+        left: 340px
+        &:before
+          border-width: 1px 0 0 1px
+          width: 30px
+          height: 78px
+          top: 16px
+          left: -40px
+        .icon
+          background-color: #FFC532
+      &.labelR
+        top: 400px
+        left: 760px
+        &:before
+          border-width: 0 0 1px 1px
+          width: 30px
+          height: 88px
+          left: -40px
+          bottom: 16px
+        .icon
+          background-color: #4B7CE9
+      &.labelP
+        top: 370px
+        left: -140px
+        &:before
+          border-width: 1px 0 0 1px
+          width: 135px
+          height: 30px
+          top: -40px
+          left: 16px
+        .icon
+          background-color: #E72C24
+
+    section
+      position: absolute
+      pointer-events: none
+
+      object
+        z-index: 0
+        position: relative
+        width: 819px
+        height: 508px
+        pointer-events: none
+
+      .pin
+        overflow: visible
+        position: absolute
+        z-index: 100
+        top: 0
+        left: 0
+        display: block
+        width: 40px
+        height: 46px
+        pointer-events: auto
+        &:hover img
+          margin-top: -10px
+        img
+          position: relative
+          +transition( margin 0.2s )
+
+      &.level0 img
+        bottom: -48px
+      &.level1 img
+        bottom: -45px
+      &.level2 img
+        bottom: -32px
+      &.level3 img
+        bottom: -10px
+
+      &.g-1
+        z-index: 1
+        .pin
+          top: 13px
+          left: 279px
+
+      &.g-2
+        z-index: 3
+        .pin
+          top: 54px
+          left: 380px
+
+      &.g-3
+        z-index: 2
+        .pin
+          top: 21px
+          left: 550px
+
+      &.r-1
+        z-index: 5
+        .pin
+          top: 143px
+          left: 509px
+
+      &.r-2
+        z-index: 4
+        .pin
+          top: 94px
+          left: 708px
+
+      &.r-3
+        z-index: 6
+        .pin
+          top: 273px
+          left: 507px
+
+      &.p-1
+        z-index: 3
+        .pin
+          top: 326px
+          left: 304px
+
+      &.p-2
+        z-index: 1
+        .pin
+          top: 123px
+          left: 180px
+
+      &.p-3
+        z-index: 2
+        .pin
+          top: 225px
+          left: 58px

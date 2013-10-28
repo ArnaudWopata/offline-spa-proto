@@ -1,0 +1,103 @@
+=input-placeholder
+  &.placeholder
+    @content
+  &:-moz-placeholder
+    @content
+  &::-moz-placeholder
+    @content
+  &:-ms-input-placeholder
+    @content
+  &::-webkit-input-placeholder
+    @content
+
+=animate-height-when-shown($height)
+  height: 0
+  overflow: hidden
+  @include transition-property(height)
+  @include transition-duration(400ms)
+  @include transition-delay(0ms)
+  &.shown
+    height: $height
+
+=delayed-animate-height-when-shown($height)
+  @include animate-height-when-shown($height)
+  @include transition-delay(0ms)
+  &.shown
+    @include transition-delay(450ms)
+
+=animate-top-when-shown($height)
+  top: -$height
+  overflow: hidden
+  @include transition-property(top)
+  @include transition-duration(400ms)
+  @include transition-delay(0ms)
+  &.shown
+    top: 0
+
+=delayed-animate-top-when-shown($height)
+  @include animate-top-when-shown($height)
+  @include transition-delay(0ms)
+  &.shown
+    @include transition-delay(450ms)
+
+=animate-bottom-when-shown($height)
+  overflow: hidden
+  @include transition-property(bottom)
+  @include transition-duration(400ms)
+  @include transition-delay(0ms)
+  &.shown
+    bottom: $height
+
+=delayed-animate-bottom-when-shown($height)
+  @include animate-bottom-when-shown($height)
+  @include transition-delay(0ms)
+  &.shown
+    @include transition-delay(450ms)
+
+=noselect
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+=animate-right-when-shown($width)
+  right: -$width
+  overflow: hidden
+  @include transition-property(right)
+  @include transition-duration(400ms)
+  @include transition-delay(0ms)
+  &.shown
+    right: 0
+
+=delayed-animate-right-when-shown($width)
+  @include animate-right-when-shown($width)
+  @include transition-delay(0ms)
+  &.shown
+    @include transition-delay(450ms)
+
+=animate-left-when-shown($width)
+  left: -$width
+  overflow: hidden
+  @include transition-property(left)
+  @include transition-duration(400ms)
+  @include transition-delay(0ms)
+  &.shown
+    left: 0
+
+=delayed-animate-left-when-shown($width)
+  @include animate-left-when-shown($width)
+  @include transition-delay(0ms)
+  &.shown
+    @include transition-delay(450ms)
+
+=background-size($size)
+  -webkit-background-size: $size           /* Safari 3.0 */
+  -moz-background-size: $size           /* Gecko 1.9.2 (Firefox 3.6) */
+  -o-background-size: $size           /* Opera 9.5 */
+  background-size: $size           /* Gecko 2.0 (Firefox 4.0) and other CSS3-compliant browsers */
+
+=square($size)
+  height: $size
+  width: $size

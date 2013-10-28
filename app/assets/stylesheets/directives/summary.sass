@@ -1,0 +1,45 @@
+$left-padding: 90px
+
+@mixin side-letter($letter)
+  &:before
+    position: absolute
+    top: 0
+    left: 0
+    color: lightgray
+    font-size: 90px
+    content: $letter
+    text-transform: uppercase
+    line-height: 80px
+
+.page
+  .summary
+    padding: 270px 76px 270px 10px
+
+    .part
+      position: relative
+      margin: 25px 60px 25px 0
+      padding-left: $left-padding
+
+      &.generation
+        +side-letter('g')
+
+      &.remuneration
+        +side-letter('r')
+
+      &.partage
+        +side-letter('p')
+
+    .summary-index
+      position: relative
+      padding-right: 70px
+
+      &.section-title
+        .title
+          color: $dark-blue
+          font-weight: bold
+
+      .page-index
+        position: absolute
+        top: 0
+        right: 0
+        color: $light-blue

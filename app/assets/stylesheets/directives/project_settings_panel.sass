@@ -1,0 +1,96 @@
+.project-settings-panel
+
+  .goodmodal
+    z-index: 1003
+
+    form
+      width: 540px
+      margin: 0 15px
+
+      hr
+        border: 1px solid #e8e8e8
+        margin: 15px 0
+
+      label
+        margin: 10px 0 5px 0
+
+      input
+        +box-sizing(border-box)
+        width: 100%
+
+  .dark-overlay
+    visibility: hidden
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: black
+    opacity: 0.5
+    z-index: 1002
+
+    &.shown
+      visibility: visible
+      cursor: pointer
+  .errors
+    color: #dd4b39
+    padding: 10px 0
+    font-size: 13px
+
+  .thumbnail-preview
+    position: relative
+    top: 15px
+    width: 80px
+    height: 80px
+    display: inline-block
+    img
+      width: 100%
+      height: 100%
+    &.empty
+      opacity: 0
+
+  form.direct-upload
+    float: left
+    line-height: normal
+    height: 50px
+    max-width: 100%
+    position: relative
+    .real-input
+      cursor: pointer
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 100
+      height: 100%
+      width: 600px
+      opacity: 0
+
+      &:hover ~ .fake-input
+        color: darken(#B7B9BB, 5)
+        border-color: darken(#B7B9BB, 5)
+      &:active ~ .fake-input
+        color: lighten(#B7B9BB, 5)
+        border-color: lighten(#B7B9BB, 5)
+    .fake-input
+      float: left
+      line-height: 50px
+      z-index: 90
+      color: #B7B9BB
+      span
+        display: inline-block
+        width: 16px
+        height: 16px
+        text-align: center
+        line-height: 1em
+        font-weight: bold
+        border: 3px solid #B7B9BB
+        border-radius: 3px
+        margin-right: 10px
+    .error
+      position: absolute
+      display: inline-block
+      line-height: 50px
+      float: left
+      padding-left: 20px
+      color: #DD8677
+      @include delayed-animate-top-when-shown(50px)

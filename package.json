@@ -1,0 +1,20 @@
+{
+  "name": "GRP-Server",
+  "author": "Wopata",
+  "description": "GRP Server",
+  "contributors": [
+    {
+      "name": "Marak Squires",
+      "email": "marak@nodejitsu.com"
+    }
+  ],
+  "devDependencies": {
+    "karma": "~0.10.x",
+    "karma-safari-launcher": "~0.1.1",
+    "karma-ng-html2js-preprocessor": "~0.1",
+    "karma-opera-launcher": "~0.1.0"
+  },
+  "scripts": {
+    "test": "SHARE_SERVER_URL=http://app.staging.grp-lab.com ./node_modules/.bin/karma start karma_dev.coffee --single-run --browsers PhantomJS"
+  }
+}

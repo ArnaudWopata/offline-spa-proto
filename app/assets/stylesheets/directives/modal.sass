@@ -1,0 +1,149 @@
+@import "compass/css3/transition"
+@import "compass/css3/transform"
+
+#modal
+  position: fixed
+  top: 50%
+  left: 50%
+  width: 50%
+  max-width: 630px
+  min-width: 320px
+  height: auto
+  z-index: 2000
+  visibility: hidden
+  @include transform( translateX(-50%) translateY(-50%) )
+
+  &.shown
+    visibility: visible
+    .content
+      opacity: 1
+      @include scale(1)
+
+  &.shown ~ .overlay
+    opacity: 1
+    visibility: visible
+
+  .content
+    color: #666
+    font-size: 15px
+    padding: 20px
+    background: white
+    position: relative
+    border: 1px solid rgba(0, 0, 0, 0.15)
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1)
+    opacity: 0
+    @include transition(all .3s)
+    @include scale(0.7)
+
+    .share
+      .permissions-list, .invitations-list
+        overflow-y: scroll
+      .permissions-list
+        height: 190px
+        &.alone
+          height: 400px
+      .invitations-list
+        height: 160px
+      table
+        width: 100%
+        td
+          height: 35px
+          padding: 16px 0
+          vertical-align: middle
+          border-bottom: 1px solid #eaeaea
+          &.avatar
+            width: 50px
+          &.access_rights
+            text-align: left
+            width: 130px
+            span
+              color: #157dfb
+              font-size: 15px
+          &.destroy
+            width: 35px
+      h3
+        color: #333
+        margin: 0
+      h5
+        color: inherit
+        font-size: inherit
+        font-weight: normal
+        padding: 0 0 10px
+        border-bottom: 1px solid #eaeaea
+        margin-bottom: 0
+      span.fullname
+        margin-right: 10px
+      sub
+        display: inline-block
+        vertical-align: middle
+        color: #999
+        position: relative
+        font-size: 13px
+        bottom: 1px
+
+      select
+        cursor: pointer
+        width: 100%
+        height: 100%
+        font-size: 15px
+        color: #157dfb
+        -webkit-appearance: none
+        -moz-appearance: none
+        text-indent: 0.01px
+        text-overflow: ''
+        border: none
+        background-color: inherit
+        background: url(/assets/dashboard_dropdown_arrow.png) no-repeat center right
+        background-position: right center
+        padding: 5px 0
+
+        &:focus
+          outline: none
+
+      .invitations
+        margin-top: 20px
+        background-color: #f5f5f5
+        padding: 20px
+        a
+          cursor: pointer
+          display: block
+          color: #157dfb
+          margin: 20px 0
+        h5
+          margin-top: 0
+        table
+          margin-top: 20px
+          td
+            padding: 4px 0
+            border: none
+            span.count
+              display: block
+              width: 35px
+              height: 35px
+              background: #ccc
+              text-align: center
+              line-height: 35px
+              color: #fff
+            input
+              width: 96%
+              height: 35px
+              @include box-sizing(border-box)
+              box-shadow: none
+              border: 1px solid #DDD
+              border-radius: 0
+
+  button.close
+    cursor: pointer
+    position: absolute
+    top: 0
+    right: 0
+    width: 50px
+    height: 50px
+    border: none
+    background: white url(/assets/navigation_icon_cross.png) no-repeat center center
+  button.delete
+    cursor: pointer
+    width: 50px
+    height: 50px
+    border: none
+    background: white url(/assets/navigation_icon_cross.png) no-repeat center center

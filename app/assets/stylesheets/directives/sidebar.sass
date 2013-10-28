@@ -1,0 +1,145 @@
+#sidebar
+  z-index: 2000
+  position: fixed
+  height: 100%
+  width: 0
+  @include transition(width .5s)
+  .container
+    position: absolute
+    right: 0
+    float: right
+    width: 316px
+    height: 100%
+    min-height: 100%
+    color: #D1DFE0
+    background-color: #252A2B
+
+    header
+      position: absolute
+      top: 0
+      width: 100%
+      height: 60px
+      line-height: 60px
+      background-color: #2A3033
+
+      h3
+        margin: 0 0 0 20px
+        font-size: 16px
+        font-weight: normal
+        float: left
+        cursor: pointer
+
+      a
+        cursor: pointer
+        float: right
+        width: 66px
+        height: 60px
+        background-position: center center
+        background-repeat: no-repeat
+        background-color: #2A3033
+        border-color: #262C2F
+        border-style: solid
+        border-width: 0 0 0 2px
+        &:hover
+          background-color: #4279F8
+        &:active
+          background-color: darken(#4279F8, 5)
+        &.preview
+          background-image: url(/assets/navigation_icon_preview.png)
+        &.share
+          background-image: url(/assets/navigation_icon_share.png)
+    footer
+      position: fixed
+      bottom: 0
+      width: inherit
+      height: 40px
+
+      button.settings
+        width: inherit
+        height: 100%
+        padding-left: 40px
+        border-top: 1px solid #1F2425
+        border-width: 1px 0 0 0
+        box-shadow: inset 0 1px 0 #313637
+        background-color: #2A3033
+        color: #919D9F
+        text-align: left
+        font-size: 12px
+        background-image: url(/assets/navigation_icon_settings.png)
+        background-repeat: no-repeat
+        background-position: 20px center
+
+        &:not([disabled])
+          cursor: pointer
+
+        &[disabled]
+          opacity: 0.5
+
+
+    section.content
+      overflow: auto
+      section.subsection
+        border-top: 1px solid #212224
+        &:first-child
+          border-top: none
+        h4
+          font-size: 11px
+          text-transform: uppercase
+          color: #778B8E
+          padding-left: 18px
+        ul
+          margin: 0
+          padding: 0
+          list-style: none
+          li
+            margin-bottom: 18px
+            margin-left: 2px
+            padding-left: 20px
+            &.current
+              border-style: solid
+              border-width: 0 0 0 2px
+              margin-left: 0
+            a
+              padding-left: 28px
+              text-decoration: none
+              color: inherit
+              background-position: left center
+              background-repeat: no-repeat
+              &.section_0
+                background-image: url(/assets/navigation_icon_porteurs.png)
+              &.section_1
+                background-image: url(/assets/navigation_icon_prop_val.png)
+              &.section_2
+                background-image: url(/assets/navigation_icon_fab_val.png)
+              &.section_3
+                background-image: url(/assets/navigation_icon_sources_rev.png)
+              &.section_4
+                background-image: url(/assets/navigation_icon_volumes.png)
+              &.section_5
+                background-image: url(/assets/navigation_icon_performances.png)
+              &.section_6
+                background-image: url(/assets/navigation_icon_ecosysteme.png)
+              &.section_7
+                background-image: url(/assets/navigation_icon_parties_prenantes.png)
+              &.section_8
+                background-image: url(/assets/navigation_icon_conventions.png)
+              &.section_9
+                background-image: url(/assets/navigation_icon_annexes.png)
+
+        &.generation li.current
+          color: #FFCA56
+          border-color: #FFCA56
+        &.remuneration li.current
+          color: #1688F0
+          border-color: #1688F0
+        &.partage li.current
+          color: #E4403B
+          border-color: #E4403B
+        &.annexes
+          h4
+            display: none
+          li
+            margin-top: 18px
+            &.current
+              color: #009D5E
+              border-color: #009D5E

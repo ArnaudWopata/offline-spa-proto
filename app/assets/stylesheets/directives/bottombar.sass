@@ -1,0 +1,26 @@
+footer.bar
+  z-index: 101
+  @include animate-height-when-shown(60px)
+  @include transition(left .5s)
+  position: fixed
+  bottom: 0
+  left: 0
+  border-top: 1px solid $border-grey
+  .info
+    color: $font-grey
+    font-size: 0.8em
+    float: left
+    height: 40px
+    line-height: normal
+    margin: 18px 0 0 20px
+    h3
+      margin: 0
+      font-size: 0.9em
+  .left
+    border-left: 1px solid $border-grey
+    height: 100%
+    float: right
+    .btn.blue
+      margin: 8px 20px 0
+      padding: 4px 18px
+      font-size: 12px

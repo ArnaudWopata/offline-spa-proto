@@ -1,0 +1,80 @@
+@import "compass"
+
+.editor
+  overflow-x: auto
+
+  .page
+    margin: 10px auto 30px auto
+
+  section.summary
+
+    +box-sizing(border-box)
+    background: $editor-summary-bg-grey
+    width: 21cm
+    margin: 20px auto 40px auto
+    padding: 15px 2cm 0 2cm
+
+    h1
+      +noselect
+      border-bottom: 1px solid #e8e8e8
+      font-size: 14px
+      padding: 10px 0
+      margin-top: 0
+
+      span.right
+        float: right
+        font-weight: normal
+
+        &.overflowing
+          color: red
+
+    textarea
+      background: $editor-summary-bg-grey
+      min-height: 70px
+
+  textarea
+    &[shared]
+      width: 100%
+      border: none
+      line-height: 18pt
+      resize: none
+      -ms-overflow-style: none
+      background: rgba(white, 0)
+      font-family: 'serrif'
+      font-size: 12pt
+      height: 10px
+
+    &[disabled]
+      background: #ffffff
+      color: #000000
+
+    &:focus
+      outline: none
+  .block
+    position: relative
+
+    &.overflowing
+      border-top: 1px dashed red
+      padding-top: 15px
+
+  .toolbar
+    @include transition(left .5s)
+    &.stuck
+      position: fixed
+      z-index: 1
+      top: 60px
+
+.urlModal
+  input.url
+    width: 230px
+    height: 40px
+    box-sizing: border-box
+    box-shadow: none
+    border: 1px solid #dddddd
+    border-radius: 0
+    font-size: 15px
+    padding: 10px
+
+.sidebar-opened
+  .toolbar.stuck
+    left: 316px

@@ -1,0 +1,210 @@
+.dashboard-opened
+  dashboard
+    top: 0
+
+.dashboard-hidden
+  dashboard
+    display: none
+
+dashboard
+  z-index: 110
+  position: absolute
+  width: 100%
+  height: 100%
+  top: -100%
+  left: 0
+  background-color: white
+  @include transition(top .5s, left .5s)
+  header.new-project
+    width: 100%
+    background-color: #F5F5F5
+    .container
+      width: 800px
+      margin: 0 auto
+      line-height: 110px
+
+    form
+      input[type="text"]
+        width: 696px
+        border: none
+        box-shadow: none
+        background-color: #F5F5F5
+        font-size: 2.4em
+        color: #515860
+        margin: 26px 0 0
+        @include input-placeholder
+      color: #D3D4D6
+      .thumbnail-preview
+        position: relative
+        top: 15px
+        float: right
+        width: 80px
+        height: 80px
+        display: inline-block
+        vertical-align: middle
+        background-color: #EBEBEB
+        img
+          width: 100%
+          height: 100%
+        &.empty
+          opacity: 0
+    .misc
+      .container
+        position: relative
+      form
+        float: left
+        line-height: normal
+        height: 50px
+        max-width: 700px
+        .real-input
+          cursor: pointer
+          position: absolute
+          top: 0
+          left: 0
+          z-index: 100
+          height: 100%
+          width: 600px
+          opacity: 0
+
+          &:hover ~ .fake-input
+            color: darken(#B7B9BB, 5)
+            border-color: darken(#B7B9BB, 5)
+          &:active ~ .fake-input
+            color: lighten(#B7B9BB, 5)
+            border-color: lighten(#B7B9BB, 5)
+        .fake-input
+          float: left
+          line-height: 50px
+          z-index: 90
+          color: #B7B9BB
+          span
+            display: inline-block
+            width: 16px
+            height: 16px
+            text-align: center
+            line-height: 1em
+            font-weight: bold
+            border: 3px solid #B7B9BB
+            border-radius: 3px
+            margin-right: 10px
+        .error
+          position: absolute
+          display: inline-block
+          line-height: 50px
+          float: left
+          padding-left: 20px
+          color: #DD8677
+          @include delayed-animate-top-when-shown(50px)
+
+      height: 0
+      transition: height 400ms ease
+      overflow: hidden
+      &.shown
+        height: 50px
+      background-color: #EBEBEB
+      border-color: $border-grey
+      border-style: solid
+      border-width: 1px 0 1px 0
+      .btn.blue
+        margin-top: 8px
+        margin-right: 0
+        padding: 4px 18px
+        font-size: 12px
+  section.project-list
+    background-color: white
+    height: 100%
+    overflow-y: auto
+    ul
+      width: 800px
+      margin: 0 auto
+      padding: 0
+      list-style: none
+      li
+        height: 80px
+        padding: 35px 0
+        border-bottom: 1px solid #F0F0F0
+        &:last-child
+          border-bottom: none
+        a
+          text-decoration: none
+          color: #AAAAAA
+          overflow: hidden
+          display: block
+        img
+          width: 80px
+          height: 100%
+          float: left
+          margin-right: 40px
+          opacity: 0.3
+        .info
+          h1
+            margin: 0 0 8px
+            font-size: 2.4em
+            color: #637378
+          span
+            font-size: 12pt
+        .settings
+          float: right
+          background-image: url(/assets/navigation_icon_settings.png)
+          background-repeat: no-repeat
+          background-position: left center
+          padding-left: 20px
+
+          &[disabled]
+            color: #CCC
+
+          &:not([disabled]):hover
+            color: #1688F0
+            cursor: pointer
+
+        &.current
+          h1
+            color: #1688F0
+          img
+            opacity: 1
+  .padding-top
+    height: 60px
+
+  .padding-bottom
+    height: 115px
+
+  .footer
+    background: white
+    text-align: center
+    padding: 15px 0
+    border-top: 1px solid #E5E5E5
+    position: absolute
+    bottom: 0
+    width: 100%
+    img.logo
+      max-height: 50px
+      margin: 0 80px
+
+  .modal
+    position: fixed
+    z-index: 100
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0, 0, 0, 0.6)
+    display: none
+    &.open
+      display: block
+    .content
+      position: absolute
+      top: 50%
+      left: 50%
+      margin: -190px 0 0 -290px
+      width: 580px
+      height: 380px
+      background-color: white
+
+      button.close
+        position: absolute
+        top: 0
+        right: 0
+        width: 50px
+        height: 50px
+        border: none
+        background: white url(/assets/navigation_icon_cross.png) no-repeat center center

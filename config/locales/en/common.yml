@@ -1,0 +1,8 @@
+en:
+  devise:
+    failure:
+      user:
+        unconfirmed: email has not been confirmed
+  time:
+    formats:
+      short: '%Y-%m-%d'

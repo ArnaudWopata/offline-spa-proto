@@ -1,0 +1,43 @@
+.annotable
+  position: relative
+
+  &.active, &:hover
+    a.annotate
+      display: block
+
+  &:after
+    content: ''
+    height: 100%
+    width: 100px
+    position: absolute
+    top: 0
+    right: -100px
+    z-index: 0
+
+
+  a.annotate
+    display: none
+    cursor: pointer
+    background: url(/assets/annotation_icon_annotation_grey.png) top center no-repeat
+    border: none
+    color: white
+    font-family: arial, sans-serif
+    font-weight: bold
+    position: absolute
+    right: -88px
+    padding: 4px 0 10px 0
+    width: 26px
+    font-size: 11px
+    top: 0
+    z-index: 1
+    text-align: center
+
+  &.empty // the '+' sign must be bigger
+    a.annotate
+      font-size: 16px
+      padding-top: 2px
+
+
+  &.active a.annotate, a.annotate:hover
+    background: url(/assets/annotation_icon_annotation_blue.png) top center no-repeat
+

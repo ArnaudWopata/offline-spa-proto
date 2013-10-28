@@ -1,0 +1,186 @@
+header.bar
+  z-index: 111
+  position: fixed
+  top: 0
+  left: 0
+  border-bottom: 1px solid $border-grey
+  @include transition(left .5s)
+  .left
+    position: relative
+
+    & > *
+      @include delayed-animate-top-when-shown(60px)
+      position: absolute
+      font-size: 20px
+      margin: 0 0 0 74px
+
+    .contentTitle
+      line-height: 30px
+      padding-top: 14px
+
+      &.splitted
+        line-height: 16px
+
+      span
+        height: 32px
+        width: 32px
+        position: absolute
+        border: none
+
+        &.generation
+          background: white url(/assets/navigation_bar_icon_generation.png) no-repeat center center
+        &.remuneration
+          background: white url(/assets/navigation_bar_icon_generation.png) no-repeat center center
+        &.partage
+          background: white url(/assets/navigation_bar_icon_generation.png) no-repeat center center
+        &.preview
+          background: white url(/assets/navigation_bar_icon_preview.png) no-repeat center center
+
+      .group, .label
+        margin-left: 40px
+
+      .group
+        color: $font-grey
+        font-size: 10px
+        text-transform: uppercase
+        font-weight: bold
+      .label
+        font-size: 16px
+
+      .big
+        margin-left: 40px
+
+
+  .clickable
+    cursor: pointer
+    display: block
+    height: 100%
+    line-height: 60px
+    border-color: $border-grey
+    border-style: solid
+    margin: 0
+    background-color: inherit
+
+
+    &.hidden
+      display: none
+
+  @mixin sidebar-control($bg-image)
+    @include delayed-animate-left-when-shown(60px)
+    position: absolute
+    border-width: 0 1px 0 0
+    width: 60px
+    background: white $bg-image no-repeat center center
+
+  a.open-sidebar
+    +sidebar-control(url(/assets/dashboard_icon_hamburger.png))
+
+  a.close-sidebar
+    +sidebar-control(url(/assets/navigation_icon_cross.png))
+    display: none
+    left: 316px
+
+  .right
+    position: relative
+    float: right
+    height: 100%
+    width: 400px
+
+    .clickable
+      @include delayed-animate-right-when-shown(100%)
+      position: absolute
+      top: 0
+      border-width: 0 0 0 1px
+
+      &.open
+        padding: 0 30px 0 20px
+
+      &.close
+        +square(60px)
+        background: url(/assets/navigation_icon_cross.png) no-repeat center center
+
+      &.editMenu, &.previewMenu
+        @include delayed-animate-top-when-shown(60px)
+        border: none
+        .lastEdit
+          color: #B1B1B1
+          font-size: 13px
+          margin-right: 7px
+        .btn.blue
+          margin: 0 10px
+          line-height: 16px
+          padding: 7px 14px
+          font-weight: normal
+          font-size: 13px
+
+
+      a.dashboard
+        background-color: white
+        font-weight: bold
+        font-size: 12px
+        color: $blue
+        border-width: 0 0 0 1px
+
+        .caret
+          display: inline-block
+          width: 20px
+          height: 20px
+          margin-left: 10px
+          vertical-align: middle
+          background: url(/assets/dashboard_dropdown_arrow.png) no-repeat center center
+
+      &.user-menu-button
+        border: none
+        padding: 0 20px 0 20px
+
+        &.shown
+          right: 72px
+
+        a:after
+          +transition(all 200ms)
+          content: ''
+          position: absolute
+          right: 2px
+          width: 0
+          height: 0
+          border-left: 5px solid transparent
+          border-right: 5px solid transparent
+          border-bottom: 5px solid $blue
+          bottom: 27px
+
+        &.menu-shown a:after
+          +transform(rotate(180deg))
+
+  .user-menu
+    +transition(all 100ms)
+    position: absolute
+    background: white
+    top: 50px
+    right: 90px
+    border: 1px solid #DDD
+    box-shadow: 0 2px 5px #DDD
+    font-size: 13px
+    opacity: 0
+    top: -100px
+
+    &.shown
+      opacity: 1
+      top: 50px
+
+    .openUserSettings
+      font-weight: bold
+      padding: 0 15px
+      cursor: pointer
+
+    .logout
+      background: $editor-summary-bg-grey
+      text-align: center
+
+      a
+        color: #535353
+        font-size: 13px
+        margin: 0 15px
+
+.sidebar-opened header.bar
+  a.close-sidebar
+    display: inline

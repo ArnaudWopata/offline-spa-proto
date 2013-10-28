@@ -1,0 +1,42 @@
+fr:
+  activerecord:
+    models:
+      user: Utilisateur
+    attributes:
+      user:
+        first_name: Prénom
+        surname: Nom
+        email: Email
+        password: Mot de passe
+        remember_me: Rester connécté
+        status: Status
+        statuses:
+          business: Entrepreneur
+          student: Etudiant
+          teacher: Enseignant
+          consultant: Consultant
+          advisor: Conseiller en création/reprise
+          accountant: Expert contable
+          finance: Financeur
+          other: Autres
+          none: Choisir
+    errors:
+      messages:
+        record_invalid: n'est pas valide
+      models:
+        user:
+          blank: doit être rempli
+          taken: est déjà pris
+          invalid: n'est pas valide
+          confirmation: le mot de passe et sa confirmation diffèrent
+          attributes:
+            password:
+              too_short: le mot de passe doit contenir 8 caractère minimum
+            confirmation_token:
+              invalid: Ce lien n'est plus valide
+        snapshot:
+          attributes:
+            project:
+              blank: doit être rempli
+            content:
+              blank: doit être rempli

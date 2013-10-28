@@ -1,0 +1,41 @@
+$border: 1px solid #D7D7D7
+
+.toolbar
+  width: 100%
+
+  .centered
+    margin: 0 auto
+    width: 21cm
+    background: #F2F2F2
+    border: $border
+    z-index: 5
+
+    a
+      $sprite-width: 40px
+
+      +square($sprite-width)
+      border-right: $border
+      display: inline-block
+      text-align: center
+      line-height: 40px
+      cursor: pointer
+      background: url('/assets/tool_bar_icons.png')
+
+      &.italic
+        background-position: -$sprite-width
+
+      &.h1
+        background-position: -2 * $sprite-width
+
+      &.h2
+        background-position: -3 * $sprite-width
+
+      &.link
+        background-position: -4 * $sprite-width
+
+      &.ul
+        background-position: -5 * $sprite-width
+
+      &.ol
+        background-position: -6 * $sprite-width
+
