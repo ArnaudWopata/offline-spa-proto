@@ -10,7 +10,7 @@ GrpServer::Application.routes.draw do
   match '/' => 'home#index'
 
 
-  offline = Rack::Offline.configure :cache_interval => 1 do
+  offline = Rack::Offline.configure :cache_interval => 5 do
     cache ActionController::Base.helpers.asset_path("application.css")
     cache ActionController::Base.helpers.asset_path("application.js")
 

@@ -4,7 +4,7 @@
     %title GRP
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-  %body
+  %body{'ng-controller' => 'ApplicationController'}
     %script{type:"text/ng-template", id:"views/root.html"}
       %h1 Items !
       %ul
@@ -13,6 +13,8 @@
 
     %script{type:"text/ng-template", id:"views/item.html"}
       %h1 Item {{item.name}} view !
+
+    #topbar Appstatus {{online ? 'online' : 'offline'}}
 
     #content{ 'ng-view' => '' }
       Loading...
