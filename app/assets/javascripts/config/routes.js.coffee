@@ -10,10 +10,11 @@ app.config ['$routeProvider',($routeProvider, assetsHost) ->
   rootsRouteSettings =
     templateUrl: 'views/root.html',
     controller: ($scope, items)->
+      console.log 'items', items
       $scope.items = items
     resolve:
-      items: (Item)->
-        Item.itemsPromise()
+      items: (CachedItem)->
+        CachedItem.allPromise()
 
   itemRouteSettings =
     templateUrl: 'views/item.html',

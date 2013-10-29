@@ -24,6 +24,7 @@
 //= require angular/angular-cookies
 //= require angular/angular-ui-router
 //= require angular/ui-utils
+//= require angular/ngStorage.min
 
 // app-specific js files
 //= require app/main

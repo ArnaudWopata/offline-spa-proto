@@ -24,6 +24,8 @@ There are 3 steps that requires network connection.
 1. Retrieve the SPA
 2. Get the data
 3. Update the data
+	1. To API
+	2. To a ShareJS server
 
 // TODO - Insert the schema
 
@@ -36,6 +38,8 @@ The first step is the most important one. If you can't load the SPA then you can
 * Within the SPA, know when we are offline
 * Cache the data to access anytime
 * Send data updates when getting back online
+	* To a REST API
+	* To a ShareJS server
 
 ## Offline access to the SPA
 
@@ -53,6 +57,14 @@ The `cache manifest` can also provide fallback solutions for error or specific s
 ### Implementation withing rails
 Rack-offline librairy allows an automatic generation of the `cache manigest`. It handles differrent behaviour depending on the environment (dev, prod), allowing easier debugging.
 
+### TODO List
+
+Getting an offline SPA is possible at a reasonnable cost:
+
+* Disabled HTML5 pushState mode (urls change from `/project/12/section/14` to `/#/project/12/section/14`)
+* Include all directive and view templates into the home page
+* Integrate Rack::Offline for AppCache manifest generation
+
 ## Within the SPA, know when we are offline
 ### Basics
 
@@ -68,6 +80,11 @@ $(window).bind('online', function(){…});
 We have to create a service listening to the event and exposing theses values. That way, controllers would just have to depend on it, expose the status in the scope and that's it.
 
 This component should be externalized to a lib.
+
+### TODO List
+Technically, we only need to implement a service that broadcasts event and provide an online status. This is already done.
+
+Globally, we need to specify how we want the app to behave / react when online status changes.
 
 ## Cache the data to access it anytime
 
@@ -100,6 +117,11 @@ BreezeJS is a two way binding solution between the API and the localStorage with
 ### Limitations
 
 W3C specifications do not set any space limit. However, common browsers set the owner -various- limitations. Some of the limits are hard limits, some have threshold that trigger user to allow the app to take more space. It goes from 5Mo to several hundreds.
+
+### TODO LIST
+
+* Write a generic LocalStorage caching layer proxy for either genuine angularjs `$resource` or `RESTAngular` library.
+* Use it everywhere in the app
 
 ## Send data updates when going back online
 A read-only offline app is a nice start. A read + write offline app is better. Just do think about how difficult it is to have it and you'll be fine.
